@@ -29,8 +29,8 @@ public class PascalsTriangle extends RecursiveTask<Integer> {
     public static void main(String []  args) {
 
 
-        ForkJoinPool pool = new ForkJoinPool(1);
-        PascalsTriangle task = new PascalsTriangle(34,20);
+        ForkJoinPool pool = new ForkJoinPool(2);
+        PascalsTriangle task = new PascalsTriangle(25,12);
         long startTime = System.currentTimeMillis();
         int result = pool.invoke(task);
         long endTime   = System.currentTimeMillis();

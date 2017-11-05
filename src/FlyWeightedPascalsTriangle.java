@@ -52,8 +52,8 @@ public class FlyWeightedPascalsTriangle extends RecursiveTask<Integer> {
     public static void main(String []  args) {
 
 
-        ForkJoinPool fwpool = new ForkJoinPool(3);
-        FlyWeightedPascalsTriangle fwtask = new FlyWeightedPascalsTriangle(20,10);
+        ForkJoinPool fwpool = new ForkJoinPool(2);
+        FlyWeightedPascalsTriangle fwtask = new FlyWeightedPascalsTriangle(30,20);
         long startTime = System.currentTimeMillis();
         int result = fwpool.invoke(fwtask);
         long endTime   = System.currentTimeMillis();
@@ -61,7 +61,7 @@ public class FlyWeightedPascalsTriangle extends RecursiveTask<Integer> {
         System.out.println(result + " " + totalTime);
 
         ForkJoinPool pool = new ForkJoinPool(3);
-        PascalsTriangle task = new PascalsTriangle(20,10);
+        PascalsTriangle task = new PascalsTriangle(30,20);
         startTime = System.currentTimeMillis();
         result = pool.invoke(task);
         endTime   = System.currentTimeMillis();
